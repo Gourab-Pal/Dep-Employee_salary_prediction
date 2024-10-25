@@ -8,7 +8,7 @@
 
 /* Body Styling */
 body {
-    background-color: #f0f4f8;
+    background-color: #1c1376;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,4 +85,30 @@ button:hover {
     font-size: 20px;
     font-weight: bold;
     color: #1b5e20;
+}
+
+/* GitHub Link Styling */
+.github-link {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.github-link a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.github-link i {
+    font-size: 24px;
+    color: #333;
+}
+
+.github-link a:hover {
+    color: #007bff;
 }
