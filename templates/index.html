@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model deployment</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Salary Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Salary prediction</h1>
-    <p>
-        Enter your years of experience below to use the model
-    </p>
-    <form action="/" method="POST">
-        <input type="number" name="years_of_experience" placeholder="Enter your experience">
-        <input type="submit">
-    </form>
-   {% if my_sal is not none %}
-    <h2> Predicted Salary: {{ my_sal }}</h2>
-    {% endif %}
+    <div class="container">
+        <div class="form-card">
+            <h1>Salary Prediction Model</h1>
+            <p>Enter your years of experience below:</p>
+            <form action="/" method="POST">
+                <input type="number" name="years_of_experience" placeholder="Years of Experience" min="0" required>
+                <button type="submit">Predict Salary</button>
+            </form>
+            {% if my_sal is not none %}
+            <div class="result">
+                <h2>Predicted Salary:</h2>
+                <p class="salary">{{ my_sal }} INR</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
 </body>
 </html>
