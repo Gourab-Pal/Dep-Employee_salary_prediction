@@ -8,7 +8,7 @@
 This **Salary Prediction Model** predicts employee salaries based on their **years of experience** using **OLS Regression**. Users can input their experience in a web interface built with **Flask** and receive the predicted salary.  
 Deployed on **Heroku** for easy access.
 
-🔗 **Live Demo**: [Check out the deployment on Heroku](https://your-heroku-app.herokuapp.com)
+🔗 **Live Demo**: [Check out the deployment on Heroku](https://employee-salary-prediction-c20762928c8a.herokuapp.com/)
 
 ---
 
