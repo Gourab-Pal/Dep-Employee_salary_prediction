@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
+import pickle
+import pandas as pd
 
-import salary
+#import salary
 
 app = Flask(__name__)
 
@@ -9,7 +11,9 @@ def hello() :
     sal = None
     if request.method == "POST":
         yoe = float(request.form["years_of_experience"])
-        sal = salary.salary_prediction(yoe)
+        model = pickle.load(open('model.pkl','rb'))
+        sal = model.predict(pd.DataFrame({'yoe' : [yoe]})).to_numpy()[0]
+        sal = int(sal)
     return render_template("index.html", my_sal = sal)
 
 

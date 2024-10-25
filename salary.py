@@ -5,17 +5,18 @@ import pickle
 from statsmodels.formula.api import ols
 
 
-def salary_prediction(experience):
 
-    df = pd.read_csv('Salary_dataset.csv')
 
-    ols_formula = "salary ~ yoe"
+df = pd.read_csv('Salary_dataset.csv')
 
-    ols_data = df
+ols_formula = "salary ~ yoe"
 
-    model = ols(formula=ols_formula, data=ols_data).fit()
+ols_data = df
 
-    pred = model.predict(pd.DataFrame({'yoe' : [experience]})).to_numpy()[0]
+model = ols(formula=ols_formula, data=ols_data).fit()
 
-    return pred
+pickle.dump(model, open('model.pkl','wb'))
+
+
+    
 
